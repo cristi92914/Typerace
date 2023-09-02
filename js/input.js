@@ -1,3 +1,4 @@
+import {addTextToH1} from "./request.js";
 let textGlobal = "";
 
 export const mapInputToText = (input, text) => {
@@ -16,6 +17,7 @@ const updateValue = (e) => {
     }
 
     if (il <= 0) {
+        textGlobal.textContent = textGlobal.textContent;
         return;
     } 
 
@@ -39,4 +41,11 @@ const updateValue = (e) => {
     textGlobal.appendChild(greenSpan);
     textGlobal.appendChild(redSpan);
     textGlobal.appendChild(blackSpan);
+
+    const black = blackSpan.textContent == "";
+    const red = redSpan.textContent == "";
+    if (black && red) {
+        addTextToH1(textGlobal);
+        e.target.value = "";
+    }
 };

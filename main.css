@@ -1,4 +1,4 @@
-#text {
+#container {
     background-color: antiquewhite;
     border-radius: 10px;
     padding: 20px;
@@ -6,8 +6,10 @@
 
 .red {
     color: red;
+    font-weight: bold;
 }
 
 .green {
     color: green;
+    font-weight: bold;
 }
