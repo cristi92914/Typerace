@@ -1,4 +1,4 @@
-import {addTextToH1} from "./request.js";
+import {start, addTextToH1} from "./request.js";
 let textGlobal = "";
 
 export const mapInputToText = (input, text) => {
@@ -46,6 +46,14 @@ const updateValue = (e) => {
     const red = redSpan.textContent == "";
     if (black && red) {
         addTextToH1(textGlobal);
+        displaySpeed();
         e.target.value = "";
     }
 };
+
+const displaySpeed = () => {
+    const end = new Date();
+    const timeDiff = (end - start) / 1000;
+    const speed = document.querySelector("#speed");
+    speed.textContent = timeDiff;
+}

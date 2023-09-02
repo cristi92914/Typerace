@@ -69,6 +69,8 @@ const CATEGORIES = [
     "success",
 ]
 
+export let start = 0;
+
 const randomArrEl = (array) => {
     const l = array.length;
     const r = Math.random(0, 1);
@@ -98,6 +100,7 @@ const sendRequest = async (el) => {
 }
 
 const setText = (el, text) => {
+    start = new Date();
     el.innerText = text;
 } 
 
