@@ -2,11 +2,27 @@
     background-color: antiquewhite;
     border-radius: 10px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+body {
+    background-color:azure;
+}
+
+input {
+    border-radius: 10px;
+    width: 80%;
+    margin: auto;
+    align-self: center;
 }
 
 .red {
     color: red;
     font-weight: bold;
+    text-decoration: underline;
 }
 
 .green {

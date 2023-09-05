@@ -55,5 +55,7 @@ const displaySpeed = () => {
     const end = new Date();
     const timeDiff = (end - start) / 1000;
     const speed = document.querySelector("#speed");
-    speed.textContent = timeDiff;
+    const noWords = textGlobal.textContent.split(" ").length;
+    speed.textContent = noWords / timeDiff / 1000;
+    speed.textContent += " words/minute";
 }
