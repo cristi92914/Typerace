@@ -71,6 +71,20 @@ const CATEGORIES = [
 ]
 
 export let start = 0;
+const timer = document.querySelector("#timer");
+
+let startTime;
+export function startTimer(timerElem) {
+    timerElem.textContent = 0;
+    startTime = new Date();
+    setInterval(() => {
+        timerElem.textContent = getTimerTime();
+    }, 1000);
+}
+
+function getTimerTime() {
+    return Math.floor((new Date() - startTime) / 1000);
+}
 
 const randomArrEl = (array) => {
     const l = array.length;
@@ -117,6 +131,7 @@ const sendRequest = async (el) => {
 
 const setText = (el, text) => {
     start = new Date();
+    startTimer(timer);
     el.innerText = text;
 } 
 

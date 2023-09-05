@@ -1,5 +1,6 @@
-import {addTextToH1} from "./request.js";
+import {addTextToH1, startTimer} from "./request.js";
 import {mapInputToText} from "./input.js";
+
 
 function initApp() {
     const textElem = document.querySelector("#text");
