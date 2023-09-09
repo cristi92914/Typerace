@@ -1,13 +1,28 @@
 import {addTextToH1, startTimer} from "./request.js";
 import {mapInputToText} from "./input.js";
 
+const textElem = document.querySelector("#text");
+const textElem1 = document.querySelector("#text");
+const input = document.querySelector("input");
+const contentAfter = document.querySelector("#content_after");
+const contentBefore = document.querySelector("#content_before");
+const button = document.querySelector("button");
+
+function hideAfter() {
+    contentAfter.style.display = "none";
+}
+
+const clickButton = (e) => {
+    contentAfter.style.display = "block";
+    contentBefore.style.display = "none";    
+}
 
 function initApp() {
-    const textElem = document.querySelector("#text");
-    addTextToH1(textElem);
+    hideAfter();
 
-    const textElem1 = document.querySelector("#text");
-    const input = document.querySelector("input");
+    button.addEventListener("click", clickButton);
+    // addTextToH1(textElem);
+
     mapInputToText(input, textElem1);
 }
 

@@ -72,6 +72,7 @@ const CATEGORIES = [
 
 export let start = 0;
 const timer = document.querySelector("#timer");
+const input = document.querySelector("input");
 
 let startTime;
 export function startTimer(timerElem) {
@@ -104,7 +105,7 @@ const sendRequest = async (el) => {
     const METHOD = "GET";
     const HEADERS = {
         'X-Api-Key': API_KEY,
-        // "Access-Control-Allow-Origin": "http://127.0.0.1:5500",
+        // "Access-Control-Allow-Origpn": "http://127.0.0.1:5500",
         // "Access-Control-Allow-Origin": "*",
         // "Access-Control-Allow-Credentials": "true",
         // 'Access-Control-Allow-Origin': '*',
@@ -133,6 +134,7 @@ const setText = (el, text) => {
     start = new Date();
     startTimer(timer);
     el.innerText = text;
+    input.focus();
 } 
 
 export const addTextToH1 = (el) => {
