@@ -1,9 +1,25 @@
 import {start, addTextToH1} from "./request.js";
 let textGlobal = "";
+const reload = document.querySelector("#reload");
+const content_reload_after = document.querySelector("#content_reload_after");
+const content_reload_before = document.querySelector("#content_reload_before");
 
 export const mapInputToText = (input, text) => {
     textGlobal = text;
     input.addEventListener("input", updateValue);
+}
+
+const reloadEventListener = () => {
+    content_reload_after.style.display = "block";
+    
+    content_reload_before.style.display = "none";
+    addTextToH1(textGlobal);
+}
+
+const displayReloadButton = () => {
+    content_reload_after.style.display = "none";
+    content_reload_before.style.display = "flex";
+    reload.addEventListener("click", reloadEventListener);
 }
 
 const updateValue = (e) => {
@@ -45,7 +61,7 @@ const updateValue = (e) => {
     const black = blackSpan.textContent == "";
     const red = redSpan.textContent == "";
     if (black && red) {
-        addTextToH1(textGlobal);
+        displayReloadButton();
         displaySpeed();
         e.target.value = "";
     }

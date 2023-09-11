@@ -19,6 +19,7 @@
 }
 
 body {
+    padding-top: 2vh;
     background-color:rgb(149, 214, 214);
     display: flex;
     align-items: center;
@@ -36,6 +37,14 @@ input:focus {
 
 #content_before {
     display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+#content_reload_before {
+    display: none;
     align-content: center;
     justify-content: center;
     height: 100%;

@@ -30,5 +30,4 @@ const func = (e) => {
         initApp();
 }
 
-
 document.addEventListener("readystatechange", func, false);

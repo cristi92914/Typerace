@@ -99,7 +99,7 @@ const sendRequest = async (el) => {
     const CATEGORY = randomArrEl(CATEGORIES);
     const URL = "https://api.api-ninjas.com/v1/quotes?category=" + CATEGORY;
 
-    const q = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis fugiat praesentium sit, quidem, minima, maxime sint tenetur sed itaque repellat labore animi aut blanditiis laudantium eligendi. Doloremque aperiam quasi delectus.";
+    const q = "Lorem ipsum";
     setText(el, q);
     return;
     const METHOD = "GET";
