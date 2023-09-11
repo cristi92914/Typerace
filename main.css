@@ -1,77 +1,81 @@
 #content_after {
-    display: none;
+  display: none;
 }
 
 #content_reload_before {
-    display: none;
+  display: none;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
 }
 
 #container {
-    background-color: antiquewhite;
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-width: 70vw;
-    max-width: 70vw;
-    min-height: 10vh;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 70vw;
+  max-width: 70vw;
+  min-height: 10vh;
 }
 
 body {
-    padding-top: 2vh;
-    background-color:rgb(149, 214, 214);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    /* height: 100vh; */
+  padding-top: 2vh;
+  background-color: rgb(149, 214, 214);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  /* height: 100vh; */
 }
 
 input:focus {
-    border: none;
-    outline: none;
-    padding-left: 10px;
-    padding-right: 10px;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #content_before {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 
 #content_reload_before {
-    display: none;
-    align-content: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
+  display: none;
+  align-content: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 
 input {
-    border-radius: 10px;
-    width: 80%;
-    margin: auto;
-    align-self: center;
-    min-height: 3vh;
-    border: none;
+  border-radius: 10px;
+  width: 80%;
+  margin: auto;
+  align-self: center;
+  min-height: 3vh;
+  border: none;
 }
 
 .red {
-    color: red;
-    font-weight: bold;
-    text-decoration: underline;
+  color: red;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .green {
-    color: green;
-    font-weight: bold;
+  color: green;
+  font-weight: bold;
 }
 
 .stats {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
