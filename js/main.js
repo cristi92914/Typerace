@@ -6,7 +6,7 @@ const textElem1 = document.querySelector("#text");
 const input = document.querySelector("input");
 const contentAfter = document.querySelector("#content_after");
 const contentBefore = document.querySelector("#content_before");
-const button = document.querySelector("button");
+const button = document.querySelector("#start");
 
 function hideAfter() {
     contentAfter.style.display = "none";
@@ -14,14 +14,13 @@ function hideAfter() {
 
 const clickButton = (e) => {
     contentAfter.style.display = "block";
-    contentBefore.style.display = "none";    
+    contentBefore.style.display = "none";
+    addTextToH1(textElem);
 }
 
 function initApp() {
-    hideAfter();
 
     button.addEventListener("click", clickButton);
-    // addTextToH1(textElem);
 
     mapInputToText(input, textElem1);
 }

@@ -99,25 +99,13 @@ const sendRequest = async (el) => {
     const CATEGORY = randomArrEl(CATEGORIES);
     const URL = "https://api.api-ninjas.com/v1/quotes?category=" + CATEGORY;
 
-    // const q = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis fugiat praesentium sit, quidem, minima, maxime sint tenetur sed itaque repellat labore animi aut blanditiis laudantium eligendi. Doloremque aperiam quasi delectus.";
-    // setText(el, q);
-    // return;
+    const q = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis fugiat praesentium sit, quidem, minima, maxime sint tenetur sed itaque repellat labore animi aut blanditiis laudantium eligendi. Doloremque aperiam quasi delectus.";
+    setText(el, q);
+    return;
     const METHOD = "GET";
     const HEADERS = {
         'X-Api-Key': API_KEY,
-        // "Access-Control-Allow-Origpn": "http://127.0.0.1:5500",
-        // "Access-Control-Allow-Origin": "*",
-        // "Access-Control-Allow-Credentials": "true",
-        // 'Access-Control-Allow-Origin': '*',
-        // 'Access-Control-Allow-Headers': 'Access-Control-Allow-Headers, Content-Type, Authorization',
-        // 'Access-Control-Allow-Methods': '*',
-        // "Content-Type": "application/json",
-        // "Content-Type": "application/json",
-        // "Accept": "application/json",
-        // "Content-Type": "application/json", 
-        // "Access-Control-Allow-Headers": "Origin, X-Api-Key, X-Requested-With, Content-Type, Accept, Authorization"
     };
-    // const CONTENT_TYPE = "application/json";
     const CONTENT_TYPE = "application/json";
 
     const response = await fetch(URL, {
