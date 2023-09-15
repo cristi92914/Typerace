@@ -74,11 +74,12 @@ export let start = 0;
 const timer = document.querySelector("#timer");
 const input = document.querySelector("input");
 
+export let intervalIncrementTimer;
 let startTime;
 export function startTimer(timerElem) {
   timerElem.textContent = 0;
   startTime = new Date();
-  setInterval(() => {
+  intervalIncrementTimer = setInterval(() => {
     timerElem.textContent = getTimerTime();
   }, 1000);
 }
@@ -125,7 +126,7 @@ const sendRequest = async (el) => {
 
 const setText = (el, text) => {
   start = new Date();
-  startTimer(timer);
+  //   startTimer(timer);
   el.innerText = text;
   input.focus();
 };

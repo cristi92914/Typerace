@@ -7,6 +7,7 @@ const input = document.querySelector("input");
 const contentAfter = document.querySelector("#content_after");
 const contentBefore = document.querySelector("#content_before");
 const button = document.querySelector("#start");
+const timer = document.querySelector("#timer");
 
 function hideAfter() {
   contentAfter.style.display = "none";
@@ -15,10 +16,12 @@ function hideAfter() {
 const clickButton = (e) => {
   contentAfter.style.display = "block";
   contentBefore.style.display = "none";
-  addTextToH1(textElem);
+  startTimer(timer);
+  console.log("here");
 };
 
 function initApp() {
+  addTextToH1(textElem);
   button.addEventListener("click", clickButton);
 
   mapInputToText(input, textElem1);
