@@ -1,10 +1,17 @@
-import { startTimer } from "./request.js";
-import { start, addTextToH1, intervalIncrementTimer } from "./request.js";
+import {
+  startTimer,
+  getTimerTime,
+  start,
+  addTextToH1,
+  intervalIncrementTimer,
+} from "./request.js";
 let textGlobal = "";
 const reload = document.querySelector("#reload");
 const content_reload_after = document.querySelector("#content_reload_after");
 const content_reload_before = document.querySelector("#content_reload_before");
 const timer = document.querySelector("#timer");
+const speed = document.querySelector("#speed");
+const green = document.querySelector("#green");
 
 export const mapInputToText = (input, text) => {
   textGlobal = text;
@@ -15,6 +22,7 @@ const reloadEventListener = () => {
   content_reload_after.style.display = "block";
 
   content_reload_before.style.display = "none";
+  setIntervalSpeed();
   startTimer(timer);
 };
 
@@ -26,6 +34,7 @@ const displayReloadButton = () => {
   reload.addEventListener("click", reloadEventListener);
 };
 
+let greenSpan;
 const updateValue = (e) => {
   let il = 0;
   const left = e.target.value;
@@ -36,8 +45,9 @@ const updateValue = (e) => {
     il++;
   }
 
-  const greenSpan = document.createElement("span");
-  greenSpan.classList.add("green");
+  greenSpan = document.createElement("span");
+  //   greenSpan.classList.add("green");
+  greenSpan.setAttribute("id", "green");
   const redSpan = document.createElement("span");
   redSpan.classList.add("red");
   const blackSpan = document.createElement("span");
@@ -61,19 +71,49 @@ const updateValue = (e) => {
   const red = redSpan.textContent == "";
   if (black && red) {
     clearInterval(intervalIncrementTimer);
+    clearInterval(intervalSpeed);
+    timer.textContent = 0;
+    speed.textContent = "Speed: 0 WPM";
+
     displayReloadButton();
-    displaySpeed();
+    displayRecord();
     e.target.value = "";
   }
 };
 
-const displaySpeed = () => {
+export let intervalSpeed;
+export const setIntervalSpeed = () => {
+  intervalSpeed = setInterval(() => {
+    speed.textContent = "Speed: ";
+    speed.textContent += getSpeed();
+    speed.textContent += " WPM";
+  }, 1000);
+};
+
+const getSpeed = () => {
   const end = new Date();
   const timeDiff = (end - start) / 1000000; // convert ms to minutes
-  const speed = document.querySelector("#speed");
-  const noWords = textGlobal.textContent.split(" ").length;
+  //   green span
+  const noWords = greenSpan?.textContent.split(" ").length || 0;
+  const noWordsPerMin = Math.round(noWords / timeDiff);
+  return noWordsPerMin;
+};
+
+const getRecord = () => {
+  const end = new Date();
+  const timeDiff = (end - start) / 1000000; // convert ms to minutes
+  const record = document.querySelector("#record");
+  //   const noWords = textGlobal.textContent.split(" ").length;
+  const noWords = greenSpan?.textContent.split(" ").length || 0;
   const decimals = 1;
-  const noWordsPerMin = noWords / timeDiff;
-  speed.textContent = Math.round(noWordsPerMin * decimals) / decimals;
-  speed.textContent += " WPM";
+  let noWordsPerMin = noWords / timeDiff;
+  noWordsPerMin = Math.round(noWordsPerMin * decimals) / decimals;
+  return noWordsPerMin;
+};
+
+const displayRecord = () => {
+  const noWordsPerMin = getRecord();
+  record.textContent = "Record: ";
+  record.textContent += noWordsPerMin;
+  record.textContent += " WPM";
 };

@@ -84,7 +84,7 @@ export function startTimer(timerElem) {
   }, 1000);
 }
 
-function getTimerTime() {
+export function getTimerTime() {
   return Math.floor((new Date() - startTime) / 1000);
 }
 

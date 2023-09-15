@@ -1,5 +1,5 @@
 import { addTextToH1, startTimer } from "./request.js";
-import { mapInputToText } from "./input.js";
+import { setIntervalSpeed, mapInputToText } from "./input.js";
 
 const textElem = document.querySelector("#text");
 const textElem1 = document.querySelector("#text");
@@ -17,7 +17,7 @@ const clickButton = (e) => {
   contentAfter.style.display = "block";
   contentBefore.style.display = "none";
   startTimer(timer);
-  console.log("here");
+  setIntervalSpeed();
 };
 
 function initApp() {
