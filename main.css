@@ -22,14 +22,14 @@ button:hover {
 #content_before #start1,
 #content_before #start2,
 #content_before #start3 {
-  position: absolute;
+  position: relative;
   display: none;
 }
 
 #content_after #reload1,
 #content_after #reload2,
 #content_after #reload3 {
-  position: absolute;
+  position: relative;
   display: none;
 }
 
