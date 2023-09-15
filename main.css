@@ -15,6 +15,25 @@ button {
 }
 
 button:hover {
+  border: 2px solid rgb(144, 137, 137);
+  color: rgb(144, 137, 137);
+}
+
+#content_before #start1,
+#content_before #start2,
+#content_before #start3 {
+  position: absolute;
+  display: none;
+}
+
+#content_after #reload1,
+#content_after #reload2,
+#content_after #reload3 {
+  position: absolute;
+  display: none;
+}
+
+button:hover {
   cursor: pointer;
   transform: translateY(-3px);
 }

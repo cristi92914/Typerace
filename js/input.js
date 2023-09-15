@@ -12,6 +12,7 @@ const content_reload_before = document.querySelector("#content_reload_before");
 const timer = document.querySelector("#timer");
 const speed = document.querySelector("#speed");
 const green = document.querySelector("#green");
+const input = document.querySelector("input");
 
 export const mapInputToText = (input, text) => {
   textGlobal = text;
@@ -19,11 +20,34 @@ export const mapInputToText = (input, text) => {
 };
 
 const reloadEventListener = () => {
-  content_reload_after.style.display = "block";
+  setTimeout(() => {
+    content_reload_after.style.display = "block";
+    content_reload_before.style.display = "none";
+    reload1.style.display = "none";
+    reload.style.display = "block";
+    startTimer(timer);
+    setIntervalSpeed();
+    input.focus();
+  }, 3000);
 
-  content_reload_before.style.display = "none";
-  setIntervalSpeed();
-  startTimer(timer);
+  setTimeout(() => {
+    reload2.style.display = "block";
+    reload.style.display = "none";
+    reload1.style.display = "none";
+    reload3.style.display = "none";
+  }, 1000);
+
+  setTimeout(() => {
+    reload1.style.display = "block";
+    reload.style.display = "none";
+    reload3.style.display = "none";
+    reload2.style.display = "none";
+  }, 2000);
+
+  reload3.style.display = "block";
+  reload.style.display = "none";
+  reload2.style.display = "none";
+  reload1.style.display = "none";
 };
 
 const displayReloadButton = () => {
