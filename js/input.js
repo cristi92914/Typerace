@@ -111,9 +111,21 @@ const getRecord = () => {
   return noWordsPerMin;
 };
 
+function justNumbers(string) {
+  var numsStr = string.replace(/[^0-9]/g, "");
+  return parseInt(numsStr);
+}
+
 const displayRecord = () => {
-  const noWordsPerMin = getRecord();
+  const noWordsPerMinBefore = justNumbers(record.textContent);
+
+  const noWordsPerMinAfter = getRecord();
+  const noWordsPerMin =
+    noWordsPerMinAfter > noWordsPerMinBefore
+      ? noWordsPerMinAfter
+      : noWordsPerMinBefore;
   record.textContent = "Record: ";
   record.textContent += noWordsPerMin;
+  localStorage.setItem("record", noWordsPerMin);
   record.textContent += " WPM";
 };

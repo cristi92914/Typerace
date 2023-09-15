@@ -7,6 +7,7 @@ const input = document.querySelector("input");
 const contentAfter = document.querySelector("#content_after");
 const contentBefore = document.querySelector("#content_before");
 const button = document.querySelector("#start");
+const record = document.querySelector("#record");
 const timer = document.querySelector("#timer");
 
 function hideAfter() {
@@ -20,9 +21,15 @@ const clickButton = (e) => {
   setIntervalSpeed();
 };
 
+const getRecord = () => {
+  const localStorageRecord = localStorage.getItem("record") || 0;
+  return `Record: ${localStorageRecord} WPM`;
+};
+
 function initApp() {
   addTextToH1(textElem);
   button.addEventListener("click", clickButton);
+  record.textContent = getRecord();
 
   mapInputToText(input, textElem1);
 }
