@@ -9,12 +9,15 @@
 button {
   border-radius: 10px;
   padding: 10px;
+<<<<<<< HEAD
   border: 2px solid black;
   background: transparent;
 }
 
 button:hover {
   cursor: pointer;
+=======
+>>>>>>> fa4f6a80056e675df93092d9e0616128fe1df1c7
 }
 
 * {

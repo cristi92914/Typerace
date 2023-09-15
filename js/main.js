@@ -17,7 +17,11 @@ const clickButton = (e) => {
   contentAfter.style.display = "block";
   contentBefore.style.display = "none";
   startTimer(timer);
+<<<<<<< HEAD
   setIntervalSpeed();
+=======
+  console.log("here");
+>>>>>>> fa4f6a80056e675df93092d9e0616128fe1df1c7
 };
 
 function initApp() {
