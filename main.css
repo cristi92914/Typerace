@@ -24,6 +24,7 @@ button:hover {
 #content_before #start3 {
   position: relative;
   display: none;
+  animation: scaleAnimation 1s;
 }
 
 #content_after #reload1,
@@ -31,6 +32,19 @@ button:hover {
 #content_after #reload3 {
   position: relative;
   display: none;
+  animation: scaleAnimation 1s;
+}
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
 }
 
 button:hover {
